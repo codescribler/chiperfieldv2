@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Management — Chipperfield Village Hall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="icon" href="images/cropped-flowers-logo.png">
+</head>
+<body>
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <img src="images/cropped-flowers-logo.png" alt="CVH Logo" class="login-logo">
+            <h1 class="login-title">Booking Management</h1>
+            <p class="login-subtitle">Chipperfield Village Hall</p>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" value="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" value="demo" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+            </form>
+            <p class="login-hint">Demo: enter any credentials</p>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <!-- Top bar -->
+        <header class="dash-header">
+            <div class="dash-header-left">
+                <img src="images/cropped-flowers-logo.png" alt="CVH" class="dash-logo">
+                <h1 class="dash-title">Booking Management</h1>
+            </div>
+            <button class="btn btn--outline btn--sm" id="logoutBtn">Sign Out</button>
+        </header>
+
+        <!-- Summary cards -->
+        <div class="dash-cards" id="dashCards"></div>
+
+        <!-- Controls bar -->
+        <div class="dash-controls">
+            <div class="dash-controls-left">
+                <div class="dash-search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search bookings...">
+                </div>
+                <select id="filterType" class="dash-select">
+                    <option value="">All Event Types</option>
+                </select>
+                <select id="filterStatus" class="dash-select">
+                    <option value="">All Statuses</option>
+                    <option value="Provisional">Provisional</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Overdue">Overdue</option>
+                </select>
+                <input type="date" id="filterFrom" class="dash-date" title="From date">
+                <input type="date" id="filterTo" class="dash-date" title="To date">
+            </div>
+            <div class="dash-controls-right">
+                <div class="dash-view-toggle">
+                    <button class="dash-view-btn active" id="viewTable" title="Table view">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                    </button>
+                    <button class="dash-view-btn" id="viewCalendar" title="Calendar view">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters (mobile collapsible) -->
+        <button class="dash-filters-toggle" id="filtersToggle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+        </button>
+
+        <!-- TABLE VIEW -->
+        <div class="dash-table-wrap" id="tableView">
+            <table class="dash-table">
+                <thead>
+                    <tr>
+                        <th data-sort="bookingDate">Date <span class="sort-icon"></span></th>
+                        <th data-sort="bookingTime">Time <span class="sort-icon"></span></th>
+                        <th data-sort="hours">Duration <span class="sort-icon"></span></th>
+                        <th data-sort="lastName">Name <span class="sort-icon"></span></th>
+                        <th data-sort="eventType">Event Type <span class="sort-icon"></span></th>
+                        <th>Contact</th>
+                        <th data-sort="status">Status <span class="sort-icon"></span></th>
+                        <th>Due</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+            <div class="dash-pagination" id="pagination"></div>
+        </div>
+
+        <!-- CALENDAR VIEW -->
+        <div class="dash-calendar-view" id="calendarView" style="display:none;">
+            <div class="admin-calendar">
+                <div class="calendar-header">
+                    <button class="calendar-nav" id="adminCalPrev" aria-label="Previous month">&#8249;</button>
+                    <h3 id="adminCalMonthYear"></h3>
+                    <button class="calendar-nav" id="adminCalNext" aria-label="Next month">&#8250;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="calendar-weekday">Sun</div>
+                    <div class="calendar-weekday">Mon</div>
+                    <div class="calendar-weekday">Tue</div>
+                    <div class="calendar-weekday">Wed</div>
+                    <div class="calendar-weekday">Thu</div>
+                    <div class="calendar-weekday">Fri</div>
+                    <div class="calendar-weekday">Sat</div>
+                </div>
+                <div class="calendar-grid" id="adminCalGrid"></div>
+            </div>
+            <div class="admin-day-panel" id="dayPanel">
+                <h4 class="day-panel-title" id="dayPanelTitle">Select a date</h4>
+                <div class="day-panel-list" id="dayPanelList">
+                    <p class="day-panel-empty">Click a date to view bookings</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETAIL PANEL (slide-out drawer) -->
+        <div class="panel-overlay" id="panelOverlay" style="display:none;"></div>
+        <div class="detail-panel" id="detailPanel">
+            <div class="panel-header">
+                <button class="panel-close" id="panelClose">&times;</button>
+                <h2 class="panel-title" id="panelTitle"></h2>
+                <span class="panel-subtitle" id="panelSubtitle"></span>
+            </div>
+            <div class="panel-body" id="panelBody"></div>
+        </div>
+
+        <!-- Mobile cards view (replaces table on small screens) -->
+        <div class="dash-cards-list" id="cardsList" style="display:none;"></div>
+    </div>
+
+    <script src="js/bookings-data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

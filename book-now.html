@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now — Chipperfield Village Hall</title>
+  <meta name="description" content="Book Chipperfield Village Hall for your event. Complete our enquiry form with your date, event type, and requirements. From £32 per hour.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/cropped-flowers-logo.png" type="image/png">
+</head>
+<body>
+n  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav nav--transparent" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="images/cropped-flowers-logo.png" alt="Chipperfield Village Hall logo" width="44" height="44">
+        <span class="nav__logo-text">Chipperfield<br>Village Hall</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">The Hall</a></li>
+        <li><a href="#" class="nav__link">Your Event</a></li>
+        <li><a href="#" class="nav__link">Gallery</a></li>
+        <li><a href="#" class="nav__link">FAQs</a></li>
+        <li><a href="#" class="nav__link">Documents</a></li>
+        <li><a href="#" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="#" class="btn btn--primary" data-demo-cta>Book Now</a>
+      </div>
+
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#" class="mobile-menu__link">Home</a>
+    <a href="#" class="mobile-menu__link">The Hall</a>
+    <a href="#" class="mobile-menu__link">Your Event</a>
+    <a href="#" class="mobile-menu__link">Gallery</a>
+    <a href="#" class="mobile-menu__link">FAQs</a>
+    <a href="#" class="mobile-menu__link">Documents</a>
+    <a href="#" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__cta">
+      <a href="#" class="btn" data-demo-cta>Book Now</a>
+    </div>
+  </div>
+
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <img src="images/weddingreceptiontables.jpg" alt="Chipperfield Village Hall dressed for a wedding reception with decorated tables">
+      <div class="page-hero__overlay"></div>
+    </div>
+    <div class="container page-hero__content">
+      <div class="breadcrumb">
+        <a href="#">Home</a>
+        <span>/</span>
+        <span class="current">Book Now</span>
+      </div>
+      <h1 class="page-hero__title">Book Your Event</h1>
+      <p class="page-hero__subtitle">Tell us about your event and we'll get back to you to confirm availability.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ PRICING INFO STRIP ============ -->
+  <section class="section section--red text-center">
+    <div class="container reveal">
+      <h2>Standard rate: £32 per hour</h2>
+      <p>Remember to include setup and cleanup time in your hours. All-day and weekend evening rates available on enquiry.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ BOOKING FORM ============ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="split reveal">
+
+        <!-- Left side — Enquiry form -->
+        <div class="split__content">
+          <div class="form-card">
+            <form id="booking-form" action="#" method="POST">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input class="form-input" type="text" id="name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number</label>
+                  <input class="form-input" type="tel" id="phone" name="phone" required placeholder="07xxx xxx xxx">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="event-date">Event Date</label>
+                  <input class="form-input" type="date" id="event-date" name="event-date" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="event-type">Event Type</label>
+                <select class="form-select" id="event-type" name="event-type">
+                  <option value="">Please select</option>
+                  <option value="wedding-reception">Wedding Reception</option>
+                  <option value="childrens-party">Children's Party</option>
+                  <option value="birthday-anniversary">Birthday/Anniversary Party</option>
+                  <option value="weekly-class">Weekly Class</option>
+                  <option value="community-event">Community Event</option>
+                  <option value="meeting">Meeting</option>
+                  <option value="market-fair">Market/Fair</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="guest-numbers">Approximate Guest Numbers</label>
+                  <input class="form-input" type="number" id="guest-numbers" name="guest-numbers" min="1" placeholder="e.g. 60">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="hours">Number of Hours</label>
+                  <span class="form-hint">Include setup and cleanup time. Standard rate is £32/hr.</span>
+                  <input class="form-input" type="number" id="hours" name="hours" min="1" placeholder="e.g. 5">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="start-time">Start Time</label>
+                <input class="form-input" type="time" id="start-time" name="start-time">
+              </div>
+
+              <div style="margin-top: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="font-size: var(--text-h4); margin-bottom: 1rem;">Optional Extras</h3>
+
+                <div class="form-checkbox" style="margin-bottom: 0.75rem;">
+                  <input type="checkbox" id="extra-av" name="extras" value="av-projector">
+                  <label for="extra-av">I'll need the AV/projector</label>
+                </div>
+
+                <div class="form-checkbox" style="margin-bottom: 0.75rem;">
+                  <input type="checkbox" id="extra-mics" name="extras" value="microphones">
+                  <label for="extra-mics">I'll need microphones</label>
+                </div>
+
+                <div class="form-checkbox" style="margin-bottom: 0.75rem;">
+                  <input type="checkbox" id="extra-kids" name="extras" value="childrens-furniture">
+                  <label for="extra-kids">I'll need children's furniture (tables &amp; chairs)</label>
+                </div>
+
+                <div class="form-checkbox" style="margin-bottom: 0.75rem;">
+                  <input type="checkbox" id="extra-loop" name="extras" value="hearing-loop">
+                  <label for="extra-loop">I'll need the hearing loop</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="additional-info">Additional Information</label>
+                <textarea class="form-textarea" id="additional-info" name="additional-info" placeholder="Tell us about your event, any special requirements, or questions you have..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg" data-demo-cta>
+                Submit Enquiry
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Right side — Helpful information -->
+        <div class="split__content">
+
+          <div class="form-card" style="margin-bottom: 2rem;">
+            <h3 style="font-size: var(--text-h4); margin-bottom: 1.25rem;">What happens next?</h3>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.25rem;">
+              <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">1</div>
+              <div>
+                <p style="margin: 0; color: var(--charcoal);">We'll check availability for your date</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.25rem;">
+              <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">2</div>
+              <div>
+                <p style="margin: 0; color: var(--charcoal);">We'll confirm your booking and send the Information Pack</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">3</div>
+              <div>
+                <p style="margin: 0; color: var(--charcoal);">You'll receive everything you need to plan your event</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: 1rem;">Prefer to get in touch directly?</h3>
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Booking Secretary</div>
+                <div class="contact-item__value">Prefer to call? Reach our Booking Secretary Alyson Brown on <a href="tel:07383415748">07383 415748</a></div>
+              </div>
+            </div>
+            <div class="contact-item" style="margin-bottom: 0;">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Email</div>
+                <div class="contact-item__value"><a href="mailto:bookingscvhwd4@gmail.com">bookingscvhwd4@gmail.com</a></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/cropped-flowers-logo.png" alt="Chipperfield Village Hall" width="36" height="36">
+            <span class="footer__logo-text">Chipperfield<br>Village Hall</span>
+          </div>
+          <p class="footer__desc">A warm, welcoming space in the heart of Chipperfield for weddings, parties, classes, and community events.</p>
+          <p class="footer__desc" style="font-size: 0.75rem; opacity: 0.6;">Registered Charity No. 250164</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Explore</h4>
+          <ul class="footer__links">
+            <li><a href="#">The Hall</a></li>
+            <li><a href="#">Your Event</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Documents</h4>
+          <ul class="footer__links">
+            <li><a href="#">Conditions of Hire</a></li>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Data Protection</a></li>
+            <li><a href="#">Safeguarding Policy</a></li>
+            <li><a href="#">H&S Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>The Common, Chipperfield,<br>Kings Langley, Herts WD4 9BS</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <a href="tel:07383415748">07383 415748</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:bookingscvhwd4@gmail.com">bookingscvhwd4@gmail.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <span>what3words: desire.famous.trades</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Chipperfield Village Hall. Registered Charity No. 250164</span>
+        <span>
+          <a href="#">Privacy Notice</a> &middot;
+          <a href="#">Conditions of Hire</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Demo Modal -->
+  <div class="demo-modal" id="demoModal" role="dialog" aria-label="Demo notice">
+    <div class="demo-modal__backdrop"></div>
+    <div class="demo-modal__card">
+      <button class="demo-modal__close" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div class="demo-modal__badge">Demo</div>
+      <h3 class="demo-modal__title">This is a demo website</h3>
+      <p class="demo-modal__text">This site was built speculatively to show Chipperfield Village Hall what their website could look like. If you're interested in discussing this further, get in touch with Daniel at Dreamfree.</p>
+      <div class="demo-modal__actions">
+        <a href="tel:07786556885" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Call Daniel: 07786 556 885
+        </a>
+        <a href="mailto:daniel@dreamfree.co.uk" class="btn btn--outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email Daniel
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

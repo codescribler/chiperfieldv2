@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Proposal — Chipperfield Village Hall | Dreamfree</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       PROPOSAL — PRINT-FRIENDLY DOCUMENT
+       ======================================== */
+
+    :root {
+      --color-primary: #C41E2A;
+      --color-primary-dark: #9E1822;
+      --color-primary-light: #F9E8E9;
+      --color-text: #1A1A1A;
+      --color-text-secondary: #555;
+      --color-text-muted: #888;
+      --color-border: #E0DADA;
+      --color-bg: #FFFFFF;
+      --color-bg-warm: #FAF7F2;
+      --color-bg-section: #F5F1EB;
+      --color-accent-green: #1B7340;
+      --color-accent-green-light: #E8F5ED;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+      --page-max: 850px;
+      --page-px: 48px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: #E8E4DE;
+      line-height: 1.65;
+    }
+
+    /* ---- Document container ---- */
+    .document {
+      max-width: var(--page-max);
+      margin: 0 auto;
+      background: var(--color-bg);
+      box-shadow: 0 2px 40px rgba(0,0,0,.12);
+    }
+
+    /* ---- Page sections ---- */
+    .page {
+      padding: var(--page-px);
+      position: relative;
+    }
+
+    .page + .page {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .page--cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(165deg, #FFFFFF 0%, var(--color-bg-warm) 100%);
+      padding: 80px var(--page-px);
+    }
+
+    .page--warm {
+      background: var(--color-bg-warm);
+    }
+
+    /* ---- Typography ---- */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--color-text);
+    }
+
+    h1 { font-size: 2.5rem; letter-spacing: -0.02em; }
+    h2 { font-size: 1.65rem; margin-bottom: 0.6em; letter-spacing: -0.01em; }
+    h3 { font-size: 1.15rem; margin-bottom: 0.4em; }
+    h4 { font-size: 1rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.3em; }
+
+    p { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    strong { font-weight: 600; }
+
+    .text-muted { color: var(--color-text-muted); }
+    .text-secondary { color: var(--color-text-secondary); }
+    .text-primary { color: var(--color-primary); }
+    .text-small { font-size: 0.85rem; }
+    .text-xs { font-size: 0.78rem; }
+    .text-center { text-align: center; }
+    .text-upper { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+
+    .mt-0 { margin-top: 0; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2.5rem; }
+    .mb-0 { margin-bottom: 0; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 1.5rem; }
+    .mb-4 { margin-bottom: 2.5rem; }
+
+    /* ---- Cover page ---- */
+    .cover__logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+      border: 3px solid var(--color-border);
+    }
+
+    .cover__badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+
+    .cover__title {
+      font-size: 2.8rem;
+      margin-bottom: 0.3em;
+      max-width: 600px;
+    }
+
+    .cover__subtitle {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 3rem;
+      font-weight: 400;
+      max-width: 480px;
+    }
+
+    .cover__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      text-align: left;
+      border-top: 1px solid var(--color-border);
+      padding-top: 2rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .cover__meta dt {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cover__meta dd {
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    /* ---- Section header ---- */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      margin-bottom: 0;
+    }
+
+    /* ---- Highlight box ---- */
+    .highlight-box {
+      background: var(--color-bg-warm);
+      border-left: 4px solid var(--color-primary);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box--green {
+      background: var(--color-accent-green-light);
+      border-left-color: var(--color-accent-green);
+    }
+
+    .highlight-box p {
+      font-size: 0.95rem;
+    }
+
+    /* ---- Stats row ---- */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+
+    .stat {
+      background: var(--color-bg);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .stat__value {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .stat__label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* ---- Tables ---- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      background: var(--color-bg-warm);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ---- Bullet lists ---- */
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      border: 2px solid var(--color-primary);
+    }
+
+    .checklist--done li::before {
+      background: var(--color-primary);
+      box-shadow: inset 0 0 0 2px white;
+    }
+
+    /* ---- Feature cards ---- */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    }
+
+    .feature-card__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .feature-card h4 {
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* ---- Pricing ---- */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .pricing-card {
+      border: 2px solid var(--color-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .pricing-card--recommended {
+      border-color: var(--color-primary);
+      box-shadow: 0 8px 32px rgba(196, 30, 42, 0.1);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pricing-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .pricing-card__desc {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .pricing-card__commercial {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .pricing-card__price {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+
+    .pricing-card__price span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .pricing-card__savings {
+      display: inline-block;
+      background: var(--color-accent-green-light);
+      color: var(--color-accent-green);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card__list {
+      list-style: none;
+      padding: 0;
+      border-top: 1px solid var(--color-border);
+      padding-top: 16px;
+    }
+
+    .pricing-card__list li {
+      font-size: 0.85rem;
+      padding: 5px 0 5px 22px;
+      position: relative;
+      color: var(--color-text-secondary);
+    }
+
+    .pricing-card__list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent-green);
+      font-weight: 700;
+    }
+
+    .pricing-card__list li.excluded {
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+    .pricing-card__list li.excluded::before {
+      content: '—';
+      color: var(--color-text-muted);
+    }
+
+    /* ---- Timeline ---- */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+      margin: 1.5rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--color-border);
+    }
+
+    .timeline__item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline__dot {
+      position: absolute;
+      left: -32px;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--color-primary);
+      z-index: 1;
+    }
+
+    .timeline__item--done .timeline__dot {
+      background: var(--color-primary);
+      box-shadow: inset 0 0 0 3px white, 0 0 0 3px var(--color-primary);
+    }
+
+    .timeline__phase {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+    }
+
+    .timeline__title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .timeline__desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      border: none;
+      height: 1px;
+      background: var(--color-border);
+      margin: 2rem 0;
+    }
+
+    /* ---- CTA section ---- */
+    .cta-box {
+      background: var(--color-primary);
+      color: white;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .cta-box h3 {
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,.85);
+      font-size: 0.92rem;
+    }
+
+    .cta-box a {
+      display: inline-block;
+      margin-top: 16px;
+      background: white;
+      color: var(--color-primary);
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-box a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+
+    /* ---- Footer ---- */
+    .doc-footer {
+      text-align: center;
+      padding: 24px var(--page-px);
+      background: var(--color-bg-warm);
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ---- Site map tree ---- */
+    .sitemap {
+      margin: 1.5rem 0;
+    }
+
+    .sitemap__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: background 0.15s;
+    }
+
+    .sitemap__item:hover {
+      background: var(--color-bg-warm);
+    }
+
+    .sitemap__item--built {
+      border-color: var(--color-accent-green);
+      background: var(--color-accent-green-light);
+    }
+
+    .sitemap__icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--color-bg-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .sitemap__item--built .sitemap__icon {
+      background: var(--color-accent-green);
+      color: white;
+    }
+
+    .sitemap__name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .sitemap__desc {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+
+    .sitemap__tag {
+      margin-left: auto;
+      flex-shrink: 0;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--color-bg-section);
+      color: var(--color-text-muted);
+    }
+
+    .sitemap__tag--built {
+      background: var(--color-accent-green);
+      color: white;
+    }
+
+    /* ---- Comparison table ---- */
+    .comparison th:first-child,
+    .comparison td:first-child {
+      width: 50%;
+    }
+
+    .comparison .old {
+      color: var(--color-text-muted);
+    }
+
+    .comparison .new {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* ---- Print styles ---- */
+    @media print {
+      body { background: white; }
+      .document { box-shadow: none; }
+      .page--cover { min-height: auto; page-break-after: always; }
+      .page { page-break-inside: avoid; }
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
+      :root {
+        --page-px: 24px;
+      }
+      .cover__title { font-size: 2rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      .stats-row { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .cover__meta { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="document">
+
+  <!-- ==========================================
+       COVER PAGE
+       ========================================== -->
+  <section class="page page--cover">
+    <div class="cover__badge">Website Proposal</div>
+    <h1 class="cover__title">A Modern Website for Chipperfield Village Hall</h1>
+    <p class="cover__subtitle">A mobile-first redesign to help more hirers find, explore, and book your hall with confidence.</p>
+    <dl class="cover__meta">
+      <div>
+        <dt>Prepared for</dt>
+        <dd>Andrea Thornton<br>Chipperfield Village Hall Committee</dd>
+      </div>
+      <div>
+        <dt>Prepared by</dt>
+        <dd>Daniel Whittaker &mdash; Dreamfree</dd>
+      </div>
+      <div>
+        <dt>Date</dt>
+        <dd>23 March 2026</dd>
+      </div>
+      <div>
+        <dt>Valid until</dt>
+        <dd>31 March 2026</dd>
+      </div>
+    </dl>
+  </section>
+
+
+  <!-- ==========================================
+       1. EXECUTIVE SUMMARY
+       ========================================== -->
+  <section class="page">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Executive Summary</h2>
+    </div>
+
+    <p>Chipperfield Village Hall is a beautiful, well-equipped community venue with a loyal base of regular hirers. The current website has served the hall well since it was built &mdash; delivering a clear, cost-effective online presence for around &pound;900. But as the committee's ambitions have grown, there's an opportunity to go further: surfacing more of the hall's information online, improving the booking calendar experience on mobile, and giving the committee better tools to manage enquiries.</p>
+
+    <p>This proposal outlines a modern, multi-page website. To show what's possible, we've already built a demo of the new homepage design &mdash; complete with navigation showing the proposed site structure &mdash; along with a working prototype of a booking management system. The goal is straightforward: <strong>make it easier for people to find the hall, understand what it offers, and book it.</strong></p>
+
+    <div class="highlight-box">
+      <p><strong>What's already done:</strong> A new homepage design demonstrating the look, feel, and structure of the proposed site, plus a visual prototype of a booking admin dashboard. This isn't a pitch based on promises &mdash; it's a working demo you can try today.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat__value">1</div>
+        <div class="stat__label">Homepage Demo</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">8</div>
+        <div class="stat__label">Pages Proposed</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">1</div>
+        <div class="stat__label">Booking System Demo</div>
+      </div>
+    </div>
+
+    <p class="text-small text-secondary">Because this project will serve as a showcase for Dreamfree's work, and because CVH is a registered charity, this proposal is offered at a significantly reduced rate &mdash; covering costs rather than reflecting full commercial value.</p>
+  </section>
+
+
+  <!-- ==========================================
+       2. UNDERSTANDING YOUR SITUATION
+       ========================================== -->
+  <section class="page page--warm">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Understanding Your Situation</h2>
+    </div>
+
+    <p>The current website was built to be simple and cost-effective &mdash; and it's done that job well, giving the hall a solid online presence. As the committee's needs have grown, though, there are some natural opportunities to take things further:</p>
+
+    <h3 class="mt-3 mb-2">Opportunities for Improvement</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Opportunity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Booking calendar on mobile</strong></td>
+          <td>The embedded Google Calendar is difficult to use on phones &mdash; a purpose-built calendar would work much better</td>
+        </tr>
+        <tr>
+          <td><strong>More information upfront</strong></td>
+          <td>A lot of useful detail (facilities, safety info, procedures) currently lives in the PDF &mdash; hirers would benefit from seeing this on the site</td>
+        </tr>
+        <tr>
+          <td><strong>Google Calendar &amp; committee access</strong></td>
+          <td>Team access and booking management have become difficult; a dedicated system would reduce friction</td>
+        </tr>
+        <tr>
+          <td><strong>Booking journey</strong></td>
+          <td>A clearer path from browsing to enquiry &mdash; with optional extras and guided steps &mdash; could improve conversions</td>
+        </tr>
+        <tr>
+          <td><strong>Additional content</strong></td>
+          <td>Details like the bouncy castle policy, children's furniture, hearing loop, and emergency info could be added to help hirers plan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="mt-4 mb-2">What the Committee Wants</h3>
+
+    <ul class="checklist">
+      <li>A fuller, more robust website that works well on all devices</li>
+      <li>Clear, up-to-date information drawn from the Hall Information Pack</li>
+      <li>A better booking experience for both hirers and the committee</li>
+      <li>Reduced admin burden &mdash; fewer repeat questions from hirers</li>
+      <li>A site that positions the hall as a modern, well-maintained venue</li>
+    </ul>
+  </section>
+
+
+  <!-- ==========================================
+       3. THE DEMOS
+       ========================================== -->
+  <section class="page">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>What We've Built to Show You</h2>
+    </div>
+
+    <p>Rather than just describe what the new site could look like, we've built two working demos you can try today.</p>
+
+    <h3 class="mt-3 mb-2">New Homepage Design</h3>
+
+    <p>The demo homepage establishes the look, feel, and tone for the new site. It's fully responsive and designed to give hirers an immediate sense of what the hall offers. It includes:</p>
+
+    <ul class="checklist checklist--done">
+      <li>A welcoming hero section with clear calls to action</li>
+      <li>Key venue stats at a glance (capacity, facilities, parking)</li>
+      <li>An interactive availability calendar (replacing the Google Calendar embed)</li>
+      <li>Event type cards to help hirers picture their occasion</li>
+      <li>A navigation structure showing how the wider site could be organised</li>
+    </ul>
+
+    <h3 class="mt-4 mb-2">Booking Management System Demo</h3>
+
+    <p>We've also built a visual prototype of a <strong>booking management dashboard</strong> for the committee. While not yet connected to a live database, it demonstrates:</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128203;</div>
+        <h4>Enquiry Tracking</h4>
+        <p>See all booking enquiries in one place with status, contact details, and event information.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128197;</div>
+        <h4>Calendar View</h4>
+        <p>Visual calendar showing bookings by day, with click-to-view detail panels.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128269;</div>
+        <h4>Search &amp; Filter</h4>
+        <p>Filter by event type, booking status, or date range. Find any booking instantly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128241;</div>
+        <h4>Mobile Responsive</h4>
+        <p>Works on phones and tablets so committee members can check bookings anywhere.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box highlight-box--green">
+      <p><strong>This addresses a known pain point.</strong> The Google Calendar approach has created access and management issues for the committee. This dashboard is designed to replace it with something purpose-built for managing hall bookings.</p>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       4. PROPOSED SITE STRUCTURE
+       ========================================== -->
+  <section class="page page--warm">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Recommended Site Structure</h2>
+    </div>
+
+    <p>Based on the Hall Information Pack and the committee's goals, we'd recommend organising the new site into focused pages &mdash; each designed to answer a specific question a prospective hirer might have, and move them closer to booking.</p>
+
+    <div class="sitemap">
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#8962;</div>
+        <div>
+          <div class="sitemap__name">Homepage</div>
+          <div class="sitemap__desc">First impression &mdash; showcases the venue, highlights key features, and provides an at-a-glance availability calendar so hirers can immediately see if their date is free.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#9881;</div>
+        <div>
+          <div class="sitemap__name">The Hall</div>
+          <div class="sitemap__desc">Answers "will it work for my event?" &mdash; capacity breakdowns, table and chair counts, kitchen facilities, AV equipment, and practical details like WiFi and parking. All the information currently locked in the PDF, made browsable.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#9733;</div>
+        <div>
+          <div class="sitemap__name">Your Event</div>
+          <div class="sitemap__desc">Answers "what do I need to know?" &mdash; before, during, and after checklists for hirers. Emergency procedures, decoration rules, leaving responsibilities. Reduces repeat questions and sets clear expectations.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#128197;</div>
+        <div>
+          <div class="sitemap__name">Book Now</div>
+          <div class="sitemap__desc">Converts interest into action &mdash; a guided enquiry form with pricing information, optional extras (AV, microphones, children's furniture), and a clear "what happens next" process so hirers know exactly what to expect.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#63;</div>
+        <div>
+          <div class="sitemap__name">FAQs</div>
+          <div class="sitemap__desc">Catches remaining questions &mdash; expandable answers covering bouncy castles, parking, decorations, heating, food waste, and more. Every FAQ answered here is one fewer email or phone call for the committee.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#128247;</div>
+        <div>
+          <div class="sitemap__name">Gallery</div>
+          <div class="sitemap__desc">Sells the space visually &mdash; a responsive image grid showing the hall set up for different events. Helps hirers picture their own occasion in the venue. Ready for updated photography.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#128196;</div>
+        <div>
+          <div class="sitemap__name">Documents</div>
+          <div class="sitemap__desc">Self-service resource hub &mdash; downloadable Conditions of Hire, policies (H&amp;S, Privacy, Safeguarding), and the Hall Information Pack. Organised by audience so hirers find what they need quickly.</div>
+        </div>
+      </div>
+
+      <div class="sitemap__item">
+        <div class="sitemap__icon">&#128222;</div>
+        <div>
+          <div class="sitemap__name">Contact &amp; Location</div>
+          <div class="sitemap__desc">Makes getting in touch easy &mdash; booking secretary, caretaker details, embedded map, what3words for emergencies, and directions with parking information.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-small text-secondary mt-3">This structure is a recommendation. The committee may wish to add, combine, or adjust pages &mdash; the final site architecture would be agreed together before build begins.</p>
+  </section>
+
+
+  <!-- ==========================================
+       5. CURRENT SITE vs NEW SITE
+       ========================================== -->
+  <section class="page">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Current Site vs. New Site</h2>
+    </div>
+
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Current Site</th>
+          <th>New Site</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Structure</strong></td>
+          <td class="old">Single scrolling page</td>
+          <td class="new">Up to 8 focused, navigable pages</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Calendar</strong></td>
+          <td class="old">Google Calendar embed &mdash; hard to use on phones</td>
+          <td class="new">Custom responsive calendar, touch-friendly</td>
+        </tr>
+        <tr>
+          <td><strong>Hall Information</strong></td>
+          <td class="old">Minimal &mdash; rest in PDF only</td>
+          <td class="new">Full details on dedicated pages</td>
+        </tr>
+        <tr>
+          <td><strong>Booking Process</strong></td>
+          <td class="old">Separate form page, unclear flow</td>
+          <td class="new">Guided journey with optional extras</td>
+        </tr>
+        <tr>
+          <td><strong>Calendar</strong></td>
+          <td class="old">Embedded Google Calendar</td>
+          <td class="new">Custom interactive calendar</td>
+        </tr>
+        <tr>
+          <td><strong>FAQs</strong></td>
+          <td class="old">None</td>
+          <td class="new">17 expandable items</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency Info</strong></td>
+          <td class="old">Not on site</td>
+          <td class="new">Dedicated section with what3words</td>
+        </tr>
+        <tr>
+          <td><strong>Admin Tools</strong></td>
+          <td class="old">Google Calendar only</td>
+          <td class="new">Purpose-built booking dashboard</td>
+        </tr>
+        <tr>
+          <td><strong>Accessibility</strong></td>
+          <td class="old">Basic</td>
+          <td class="new">ARIA labels, keyboard nav, motion preferences</td>
+        </tr>
+        <tr>
+          <td><strong>Platform</strong></td>
+          <td class="old">WordPress + Thrive Architect</td>
+          <td class="new">Lightweight static HTML/CSS/JS</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ==========================================
+       6. INVESTMENT
+       ========================================== -->
+  <section class="page">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Investment</h2>
+    </div>
+
+    <p>We want to be straightforward about pricing. This section gives you the context to decide what feels right for the committee's budget.</p>
+
+    <h3 class="mt-3 mb-2">What the Original Site Cost</h3>
+
+    <p>The current website was built for approximately <strong>&pound;900</strong> &mdash; a deliberately simple, cost-effective build focused on a single page plus booking. It's served the hall well, but the scope of what we're proposing here is considerably larger.</p>
+
+    <h3 class="mt-4 mb-1">What This Would Cost Commercially</h3>
+    <p class="text-small text-secondary mb-3">For context, here's what an agency or freelancer would typically charge for a project of this scope.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Deliverable</th>
+          <th style="text-align:right">Typical Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Information architecture &amp; content strategy</td>
+          <td style="text-align:right">&pound;400 &ndash; &pound;600</td>
+        </tr>
+        <tr>
+          <td>Design &amp; UI (up to 8 responsive pages)</td>
+          <td style="text-align:right">&pound;1,600 &ndash; &pound;2,400</td>
+        </tr>
+        <tr>
+          <td>Front-end development &amp; interactions</td>
+          <td style="text-align:right">&pound;1,200 &ndash; &pound;1,800</td>
+        </tr>
+        <tr>
+          <td>Booking management system</td>
+          <td style="text-align:right">&pound;800 &ndash; &pound;1,200</td>
+        </tr>
+        <tr>
+          <td>Content writing &amp; SEO foundations</td>
+          <td style="text-align:right">&pound;300 &ndash; &pound;500</td>
+        </tr>
+        <tr>
+          <td>Testing, QA &amp; launch support</td>
+          <td style="text-align:right">&pound;200 &ndash; &pound;400</td>
+        </tr>
+        <tr>
+          <td><strong>Typical Commercial Total</strong></td>
+          <td style="text-align:right"><strong>&pound;4,500 &ndash; &pound;6,900</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="mt-4 mb-2">What We're Asking</h3>
+
+    <p>We're not charging commercial rates for this project. CVH is a registered charity doing valuable work for the community, and this project also serves as a portfolio piece for Dreamfree. So rather than set a fixed price, we'd like the committee to <strong>choose what feels fair</strong>.</p>
+
+    <div class="highlight-box">
+      <p>As a guide, we'd suggest somewhere around <strong>&pound;1,500</strong> for the full package &mdash; every page, the booking admin system, and domain migration. But if the committee feels a different amount is more appropriate for the budget, we're genuinely open to that conversation.</p>
+    </div>
+
+    <h3 class="mt-3 mb-2">What's Included</h3>
+
+    <ul class="checklist">
+      <li>Up to 8 fully responsive pages (as outlined in Section 4)</li>
+      <li>Interactive availability calendar</li>
+      <li>Booking enquiry form with optional extras</li>
+      <li>Booking management dashboard for the committee</li>
+      <li>SEO foundations &amp; meta tags</li>
+      <li>Domain migration &amp; launch</li>
+    </ul>
+
+    <hr class="divider">
+
+    <h3 class="mb-2">Ongoing Care &amp; Maintenance</h3>
+
+    <p>After launch, we'd recommend an ongoing care plan at <strong>&pound;50 per month</strong>. This keeps the site running smoothly and includes ongoing support for as long as the plan is active:</p>
+
+    <ul class="checklist">
+      <li>Hosting, SSL &amp; domain management</li>
+      <li>Security monitoring &amp; backups</li>
+      <li>Content updates (text, images, documents)</li>
+      <li>Uptime monitoring</li>
+      <li>Priority email support</li>
+    </ul>
+
+    <p class="text-small text-secondary mt-2">No minimum term. Cancel anytime with 30 days' notice.</p>
+
+    <hr class="divider">
+
+    <h3 class="mb-2">Payment</h3>
+
+    <p class="text-small">However the committee decides on the amount, we're happy to be flexible on timing:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Option A</strong></td>
+          <td>50% on agreement, 50% on launch</td>
+        </tr>
+        <tr>
+          <td><strong>Option B</strong></td>
+          <td>3 equal monthly instalments</td>
+        </tr>
+        <tr>
+          <td><strong>Option C</strong></td>
+          <td>Whatever works for the committee &mdash; just let us know</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ==========================================
+       7. TIMELINE
+       ========================================== -->
+  <section class="page page--warm">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>Timeline</h2>
+    </div>
+
+    <p>Because the majority of the design and build work is already complete, the timeline to launch is short. The main dependencies are content approval from the committee and sourcing stronger photography.</p>
+
+    <div class="timeline">
+      <div class="timeline__item timeline__item--done">
+        <div class="timeline__dot"></div>
+        <div class="timeline__phase">Completed</div>
+        <div class="timeline__title">Design &amp; Build</div>
+        <div class="timeline__desc">Information architecture, page designs, front-end code, booking system prototype &mdash; all complete.</div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__phase">Week 1</div>
+        <div class="timeline__title">Committee Review &amp; Content</div>
+        <div class="timeline__desc">Walk through the demo site. Agree on content changes, collect updated photography, finalise copy.</div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__phase">Week 2</div>
+        <div class="timeline__title">Refinements &amp; Integration</div>
+        <div class="timeline__desc">Apply feedback, add final images, connect form submissions, set up hosting.</div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__phase">Week 3</div>
+        <div class="timeline__title">Testing &amp; Launch</div>
+        <div class="timeline__desc">Cross-device testing, committee sign-off, domain migration, and go live.</div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__phase">Ongoing</div>
+        <div class="timeline__title">Care &amp; Maintenance</div>
+        <div class="timeline__desc">Ongoing support, content updates, hosting, and backups &mdash; included with the monthly care plan.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       8. WHY DREAMFREE
+       ========================================== -->
+  <section class="page">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2>Why Dreamfree</h2>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128736;</div>
+        <h4>Already Built, Not Just Pitched</h4>
+        <p>You're not evaluating a concept. The demo site exists and you can use it today. What you see is what you get.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#127968;</div>
+        <h4>Local Understanding</h4>
+        <p>Built from your own Hall Information Pack and real committee needs &mdash; not a generic template applied to a village hall.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#9889;</div>
+        <h4>Lightweight &amp; Fast</h4>
+        <p>No WordPress, no heavy plugins, no monthly platform fees. Clean, fast HTML that loads instantly on any device.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#129309;</div>
+        <h4>Partnership Pricing</h4>
+        <p>Charity-friendly rates that cover costs. No hidden fees, no lock-in, no ongoing charges you weren't expecting.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       9. NEXT STEPS
+       ========================================== -->
+  <section class="page page--warm">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2>Next Steps</h2>
+    </div>
+
+    <p>If the committee would like to move forward &mdash; or simply explore the demo in more detail &mdash; here's how:</p>
+
+    <ol style="padding-left: 1.2em; font-size: 0.95rem; line-height: 1.8;">
+      <li><strong>Browse the demos</strong> &mdash; explore the new homepage design and the booking admin prototype</li>
+      <li><strong>Share with the committee</strong> &mdash; gather feedback on content, images, and layout</li>
+      <li><strong>Book a 30-minute walkthrough</strong> &mdash; Daniel can present the site and answer questions</li>
+      <li><strong>Choose a package</strong> &mdash; Foundation or Complete, with a payment plan that suits</li>
+    </ol>
+
+    <div class="cta-box">
+      <h3>Ready to discuss?</h3>
+      <p>Get in touch to arrange a walkthrough or ask any questions.</p>
+      <a href="mailto:daniel@dreamfree.co.uk">daniel@dreamfree.co.uk</a>
+    </div>
+
+    <p class="text-center text-small text-muted mt-3">This proposal is valid until 31 March 2026.</p>
+  </section>
+
+
+  <!-- ---- Footer ---- -->
+  <footer class="doc-footer">
+    <p>Confidential &mdash; Prepared by Dreamfree for Chipperfield Village Hall Committee</p>
+    <p style="margin-top: 4px;">&copy; 2026 Dreamfree &middot; daniel@dreamfree.co.uk</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
